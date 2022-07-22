@@ -81,7 +81,7 @@ class Inception(Model):
         out4 = self.relu4_1(out4)
         # DepthConcat
         output = Concatenate(axis=-1)([out1, out2, out3, out4])
-        print(output.shape)
+        # print(output.shape)
 
         return output
 

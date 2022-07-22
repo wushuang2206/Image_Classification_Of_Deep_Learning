@@ -76,7 +76,7 @@ def run(model='Res34',  # 要运行的模型  可选Lenet5, Alexnet8, GoogLeNet,
         "Res101": Deep_Res([3, 4, 23, 3], class_number),
         "Res152": Deep_Res([3, 8, 36, 3], class_number)
     }
-    x_train, y_train, x_test, y_test = load_data(data_set=dataset)
+    x_train, y_train, x_test, y_test = load_data(data_set=dataset, class_number=class_number)
     model = models[model]
     model.compile(optimizer=optimizer, loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
                   metrics=['sparse_categorical_accuracy'])
